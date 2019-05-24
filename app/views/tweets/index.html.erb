@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>Sample</title>
+  <style type="text/css" href="./style.css"></style>
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="blue-grey darken-4">
+    <div class="nav-wrapper">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+          <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "post", new_tweet_path %></li>
+        <% else %>
+          <li><%= link_to "log in", new_user_session_path %></li>
+          <li><%= link_to "Registration", new_user_registration_path %></li>
+        <% end %>
+          <%# <li><a href="collapsible.html">JavaScript</a></li> %>
+        </ul>
+    </div>
+  </nav>
+
+  <header class="title">
+    <h1>TABiLIST<span>I own everything that I see and everything that pleases me.</span></h1>
+  </header>
+
+  <div class="contents" >
+    <h2>次は <a href= "https://earth.google.com/web/@0,7.658201,0a,22251752d,35y,0h,0t,0r/data=CgAoAQ">何処</a> へ行く?</h2>
+    <h3>あと<span><%= 196 - Tweet.all.length %></span>ヶ国！</h3>
+    <div class="grid">
+      <% @tweets.each do |tweet| %>
+       <%= render partial: "tweet", locals: { tweet: tweet } %>
+      <% end %>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript" src="./app.js"></script>
+</html>
+
+<%= paginate(@tweets) %>
+<%# <ul class="pagination">
+  <li class="disabled"><a href="#!"><i class="material-icons">current</i></a></li>
+  <li class="active"><a href="#!">1</a></li>
+  <li class="waves-effect"><a href="#!">2</a></li>
+  <li class="waves-effect"><a href="#!">3</a></li>
+  <li class="waves-effect"><a href="#!">4</a></li>
+  <li class="waves-effect"><a href="#!">5</a></li>
+  <li class="waves-effect"><a href="#!"><i class="material-icons">past</i></a></li>
+</ul> %>

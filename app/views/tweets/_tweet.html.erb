@@ -1,0 +1,10 @@
+<div class="trip" style="background-image: url(<%= tweet.image %>);">
+  <div>
+    <span class="country"><%= tweet.country %>／<%= tweet.city %></span></h2>
+    <p class="text"><%= tweet.text %></p>
+    <ul class="tab"> 
+      <li><%= link_to 'edit', "/tweets/#{tweet.id}/edit", method: :get %></li>
+      <li><%= link_to 'delete', "/tweets/#{tweet.id}", method: :delete %></li>
+    </ul>
+  </div>
+</div>

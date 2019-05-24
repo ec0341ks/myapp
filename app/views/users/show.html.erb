@@ -1,0 +1,29 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="col s12 m7">
+<h2 class="header">PASTPOST</h2>
+<div class="card horizontal">
+  <div class="card-image">
+    <img src="https://lorempixel.com/100/190/nature/6">
+  </div>
+  <div class="card-stacked">
+    <div class="card-content">
+      <p>I am a very simple card. I am good at containing small bits of information.</p>
+    </div>
+    <div class="card-action">
+      <a href="#">This is a link</a>
+    </div>
+  </div>
+</div>
+</div>
+      
+
+
+ <div class="contents-row" >
+    <p> past list</p>
+    <% @tweets.each do |tweet| %>
+      <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+        <%= simple_format(tweet.country) %>
+        <%= simple_format(tweet.city) %>
+      </div>
+    <% end %>
+</div>

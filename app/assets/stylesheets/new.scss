@@ -1,0 +1,32 @@
+*{
+  padding: auto;
+}
+
+input{
+  margin-top: 20px;
+  width: 50%;
+  height: 50px;
+  font-size: 30px;
+}
+
+textarea{
+  margin-top: 30px;
+  width: 50%;
+  font-size: 30px;
+}
+
+
+// <div class="contents row">
+//   <div class="container">
+//     <%= form_tag('/tweets', method: :post) do %>
+//       <h3>
+//         投稿する
+//       </h3>
+//       <input placeholder="Country" type="text" name="country" required>
+//       <input placeholder="City" type="text" name="city" required>
+//       <input placeholder="Image Url" type="text" name="image" required>
+//       <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
+//       <input type="submit" value="SENT">
+//     <% end %>
+//   </div>
+// </div>
